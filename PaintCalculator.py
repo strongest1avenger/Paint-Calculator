@@ -9,6 +9,10 @@ and using unittest to make sure there were no errors when run."""
 
 
 def calculate_paint_needed(length, width, height, paint_coverage):
+    if length <= 0 or width <= 0 or height <= 0:
+        raise ValueError("Parameters must be a positive number")
+    if paint_coverage <= 0:
+        raise ValueError("Paint coverage must be a positive number")
     # Calculate the area of the floor in meteres
     floor_area = length * width
     # Calculate the volume of the room
